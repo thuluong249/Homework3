@@ -32,7 +32,7 @@
 ---
 * This one asking user to use special characters.
 
-![page](/Assets/Images/Specialcharacters.png)
+![page](/Assets/Images/SpecialCharacters.png)
 
 ---
 * This one for the special lower cases characters
