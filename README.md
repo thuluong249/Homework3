@@ -21,35 +21,35 @@
 
 * This is the homepage
 
-![page](/Assets/Images/03-javascript-homework-demo.png)
+![page](/Assets/Images/PG.png)
 
 ---
 
 * This one is asking user input
 
-![page](/Assets/Images/Input.png)
+![page](/Assets/Images/PGAsking.png)
 
 ---
 * This one asking user to use special characters.
 
-![page](/Assets/Images/SpecialCharacters.png)
+![page](/Assets/Images/PGspecial.png)
 
 ---
 * This one for the special lower cases characters
 
-![page](/Assets/Images/Speciallowercases.png)
+![page](/Assets/Images/PGlowercase.png)
 
 ---
 * This one for the upper cases
 
-![page](/Assets/Images/Specialuppercase.png)
+![page](/Assets/Images/PGuppercase.png)
 
 ---
 * This one for the numbers
 
-![page](/Assets/Images/Numbers.png)
+![page](/Assets/Images/PGnumber.png)
 
 ---
 * This one to show the password on the page.
 
-![page](/Assets/Images/Showthepassword.png)
+![page](/Assets/Images/PGShowingpw.png)

@@ -5,11 +5,6 @@ var lowercase;
 var number;
 var symbol;
 
-// Ask for user input
-var length = Number(prompt("How many characters would you like your password to be?"));
-// The length of the password user must choose.
-while (isNaN(length) || length < 8 || length > 128) length = Number(prompt("Length must be 8-128 characters. How many characters would you like your password to be?"));
-
 //// create arrays for all lowercase, upercase, numeric, and special characters & a variable for the password string
 
 caseArray = [];
@@ -18,46 +13,50 @@ upperCaseChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 numericChar = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 specialChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "{", "}", "|", "[", "]", ";", "'", ":", "<", ">", "?", "/"];
 
-var uppers = confirm("Would you like to use uppercase letters?");
-var lowers = confirm("Would you like to use lowercase letters?");
-var numbers = confirm("Would you like to use numbers?");
-var symbols = confirm("Would you like to use special characters?");
-
-while (!uppers && !lowers && !numbers && !symbols) {
-  alert("You must select at least one character type!");
-  uppers = confirm("Would you like to use uppercase letters?");
-  lowers = confirm("Would you like to use lowercase letters?");
-  numbers = confirm("Would you like to use numbers?");
-  symbols = confirm("Would you like to use special characters?");
-};
-
 generateBtn.addEventListener('click', function () {
-  generateNewPassword();
+  var password=generateNewPassword();
+  document.querySelector("#password").value=password;
 });
 // creating a function for generating the password
-function generatePassword() {
-  var password = "";
+function generateNewPassword() {
+  // Ask for user input
+  caseArray=[];
+  var length = Number(prompt("How many characters would you like your password to be?"));
+  // The length of the password user must choose.
+  while (isNaN(length) || length < 8 || length > 128) length = Number(prompt("Length must be 8-128 characters. How many characters would you like your password to be?"));
 
-  var allowed = {};
-  if (uppers) password += rando(allowed.uppers = "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-  if (lowers) password += rando(allowed.lowers = "abcdefghijklmnopqrstuvwxyz");
-  if (numbers) password += rando(allowed.numbers = "1234567890");
-  if (symbols) password += rando(allowed.symbols = "!@#$%^&*(){}[]=<>/,.");
+  var uppers = confirm("Would you like to use uppercase letters?");
+  var lowers = confirm("Would you like to use lowercase letters?");
+  var numbers = confirm("Would you like to use numbers?");
+  var symbols = confirm("Would you like to use special characters?");
 
-  for (var i = password.length; i < length; i++) password += rando(rando(allowed).value);
-
-  document.getElementById("password").value = randoSequence(password).join("");
-  generateButton = document.getElementById("generateButton");
-  passwordEntry = document.getElementById("passwordEntry");
-  generateButton.onclick = generatePassword;
+  while (!uppers && !lowers && !numbers && !symbols) {
+    alert("You must select at least one character type!");
+    uppers = confirm("Would you like to use uppercase letters?");
+    lowers = confirm("Would you like to use lowercase letters?");
+    numbers = confirm("Would you like to use numbers?");
+    symbols = confirm("Would you like to use special characters?");
+  };
+if (uppers) {
+  caseArray = caseArray.concat(upperCaseChar);
+};
+if (lowers) {
+  caseArray = caseArray.concat(lowerCaseChar);
 };
 
-// var length = 8,
-//         charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-//         retVal = "";
-//     for (var i = 0, n = charset.length; i < length; ++i) {
-//         retVal += charset.charAt(Math.floor(Math.random() * n));
-//     }
-//     return retVal;
+if (numbers) {
+  caseArray = caseArray.concat(numericChar);
+};
+if (symbols) {
+  caseArray = caseArray.concat(specialChar);
+};
+console.log(caseArray);
 
+var password = "";
 
+for(var i = 0; i<length; i++) {
+  var randomValue = caseArray[Math.floor(caseArray.length * Math.random())];
+  password += randomValue;
+};
+return password;
+};
