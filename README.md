@@ -42,7 +42,7 @@
 ---
 * This one for the upper cases
 
-![page](/Assets/Images/PGuppercase.png)
+![page](/Assets/Images/PGUppercase.png)
 
 ---
 * This one for the numbers
